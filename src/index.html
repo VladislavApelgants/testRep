@@ -41,33 +41,26 @@
       src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
     ></script>
     <script>
-      var swiper = new Swiper('.mySwiper', {
-
+     const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
   loop: true,
 
   // If we need pagination
-
-  slidesPerView: 1,
-  spaceBetween: 10,
-  loop: true,
-  keyboard: {
-    enabled: true,
+  pagination: {
+    el: '.swiper-pagination',
   },
 
+  // Navigation arrows
   navigation: {
-    nextEl: '.swiper-btn-next',
-    prevEl: '.swiper-btn-prev',
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
-  on: {
-    slideChange: function () {
-      var currentSlide = this.realIndex + 1;
-      var totalSlides = this.slides.length;
-      document.querySelector('.first-slide-num').innerHTML =
-        currentSlide < 10 ? '0' + currentSlide : currentSlide;
-      document.querySelector('.last-slide-num').innerHTML =
-        totalSlides < 10 ? '0' + totalSlides : totalSlides;
-    },
-  }
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
 });
     </script>
 
